@@ -1,4 +1,12 @@
-﻿Public Class Card
+﻿'Rudy Earnest
+'RCET 3371
+'Fall 2025
+'Game of War
+Option Strict On
+Option Explicit On
+Option Compare Text
+
+Public Class Card
 
 
     Private _suit As String
@@ -20,6 +28,7 @@
             _rank = value
         End Set
     End Property
+
     Private _frontImage As Image
     Public Property FrontImage() As Image
         Get
@@ -44,15 +53,15 @@
 
         Me.Suit = suit.ToUpper
         Me.Rank = rank.ToUpper
-        Me.frontImage = My.Resources.ResourceManager.GetObject($"{Me.Rank}{Me.Suit}")
-        If Me.frontImage Is Nothing Then
-            Me.frontImage = My.Resources.ResourceManager.GetObject($"_{Me.Rank}{Me.Suit}")
+        Me.FrontImage = CType(My.Resources.ResourceManager.GetObject($"{Me.Rank}{Me.Suit}"), Image)
+        If Me.FrontImage Is Nothing Then
+            Me.FrontImage = CType(My.Resources.ResourceManager.GetObject($"_{Me.Rank}{Me.Suit}"), Image)
         End If
-        If Me.frontImage Is Nothing Then
-            Me.frontImage = My.Resources.aces
+        If Me.FrontImage Is Nothing Then
+            Me.FrontImage = My.Resources.aces
         End If
 
-        Me.backImage = My.Resources.Green_back
+        Me.BackImage = My.Resources.Green_back
 
     End Sub
 
