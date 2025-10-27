@@ -10,7 +10,8 @@ Imports System.Threading
 Public Class WarGameLogic
 
     'Variable Declarations-------------------------------------------------------------------------------------------------------------------------------------------
-
+    Public LastP1CardsPlayed As New List(Of Card)
+    Public LastP2CardsPlayed As New List(Of Card)
     Public p1 As New WarPlayer
     Public p2 As New WarPlayer
     Public wars As Integer
@@ -36,7 +37,7 @@ Public Class WarGameLogic
             _rank = GetRank(RandomNumber(13))
             _suit = GetSuit(RandomNumber(4))
             '_rank = "a"
-            '_suit = "s"
+            ' _suit = "s"
 
 
             If Not (tracker.Contains(_rank & _suit)) Then
@@ -88,6 +89,8 @@ Public Class WarGameLogic
         End If
 
         If isInWar Then
+            LastP1CardsPlayed.Clear()
+            LastP2CardsPlayed.Clear()
             ExecuteOrder66()
         Else
             StartNewRound()
@@ -97,8 +100,8 @@ Public Class WarGameLogic
     Private Sub ExecuteOrder66()
         wars += 1
         If p1.GetHand = 0 Or p2.GetHand = 0 Then
-            WarPot.Enqueue(LastP1Card)
-            WarPot.Enqueue(LastP2Card)
+            'WarPot.Enqueue(LastP1Card)
+            'WarPot.Enqueue(LastP2Card)
             EndGame()
             Return
         Else
@@ -107,11 +110,13 @@ Public Class WarGameLogic
                 For i = 1 To 3
                     tempCard = p1.Hand.Dequeue()
                     WarPot.Enqueue(tempCard)
+                    LastP1CardsPlayed.Add(tempCard)
                 Next
             Else
                 Do Until p1.GetHand = 1
                     tempCard = p1.Hand.Dequeue()
                     WarPot.Enqueue(tempCard)
+                    LastP1CardsPlayed.Add(tempCard)
                 Loop
             End If
 
@@ -119,15 +124,21 @@ Public Class WarGameLogic
                 For i = 1 To 3
                     tempCard = p2.Hand.Dequeue()
                     WarPot.Enqueue(tempCard)
+                    LastP2CardsPlayed.Add(tempCard)
                 Next
             Else
                 Do Until p2.GetHand = 1
                     tempCard = p2.Hand.Dequeue()
                     WarPot.Enqueue(tempCard)
+                    LastP2CardsPlayed.Add(tempCard)
                 Loop
             End If
             LastP1Card = p1.Hand.Dequeue
             LastP2Card = p2.Hand.Dequeue
+            LastP1CardsPlayed.Add(LastP1Card)
+            LastP2CardsPlayed.Add(LastP2Card)
+            WarPot.Enqueue(LastP1Card)
+            WarPot.Enqueue(LastP2Card)
             If DecodeRank(LastP1Card.Rank) > DecodeRank(LastP2Card.Rank) Then
                 roundWinner = "Player 1"
                 isInWar = False
@@ -142,8 +153,6 @@ Public Class WarGameLogic
                 End While
             Else
                 isInWar = True
-                WarPot.Enqueue(LastP1Card)
-                WarPot.Enqueue(LastP2Card)
                 'MessageBox.Show("The War Continues...")
             End If
         End If
@@ -151,8 +160,12 @@ Public Class WarGameLogic
 
     Private Sub StartNewRound()
         WarPot.Clear()
+        LastP1CardsPlayed.Clear()
+        LastP2CardsPlayed.Clear()
         LastP1Card = p1.Hand.Dequeue()
         LastP2Card = p2.Hand.Dequeue()
+        LastP1CardsPlayed.Add(LastP1Card)
+        LastP2CardsPlayed.Add(LastP2Card)
         Dim p1Rank As Integer = DecodeRank(LastP1Card.Rank)
         Dim p2Rank As Integer = DecodeRank(LastP2Card.Rank)
         If p1Rank = p2Rank Then
