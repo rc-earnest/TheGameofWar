@@ -22,9 +22,28 @@ Partial Class SplashScreenForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
+        Me.SplashTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.SuspendLayout()
+        '
+        'SplashTimer
+        '
+        Me.SplashTimer.Interval = 10000
+        '
+        'SplashScreenForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackgroundImage = Global.TheGameofWar.My.Resources.Resources.Splash_Image
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(512, 512)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "SplashScreenForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SplashScreenForm"
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents SplashTimer As Timer
 End Class

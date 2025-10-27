@@ -267,6 +267,7 @@ Partial Class WarGUIForm
         Me.Controls.Add(Me.EndRoundButton)
         Me.Controls.Add(Me.StartRoundButton)
         Me.Name = "WarGUIForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         CType(Me.P1Card1PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.P1Card2PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
