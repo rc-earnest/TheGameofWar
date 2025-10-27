@@ -126,4 +126,8 @@ Public Class WarGUIForm
         InitializeCardGraphics()
         GameTimer.Enabled = False
     End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutForm.Show()
+    End Sub
 End Class

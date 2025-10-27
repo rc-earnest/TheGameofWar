@@ -35,26 +35,29 @@ Partial Class WarGUIForm
         Me.WarsPlayedLabel = New System.Windows.Forms.Label()
         Me.GameTimer = New System.Windows.Forms.Timer(Me.components)
         Me.GameWinnerLabel = New System.Windows.Forms.Label()
-        Me.P1Card1PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P1Card2PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P1Card3PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P1Card4PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P2Card1PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P2Card2PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P2Card3PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P2Card4PictureBox = New System.Windows.Forms.PictureBox()
-        Me.P1Card5PictureBox = New System.Windows.Forms.PictureBox()
         Me.P2Card5PictureBox = New System.Windows.Forms.PictureBox()
-        CType(Me.P1Card1PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P1Card2PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P1Card3PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P1Card4PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P2Card1PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P2Card2PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P2Card3PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P2Card4PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.P1Card5PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.P1Card5PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P2Card4PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P2Card3PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P2Card2PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P2Card1PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P1Card4PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P1Card3PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P1Card2PictureBox = New System.Windows.Forms.PictureBox()
+        Me.P1Card1PictureBox = New System.Windows.Forms.PictureBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.P2Card5PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P1Card5PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P2Card4PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P2Card3PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P2Card2PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P2Card1PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P1Card4PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P1Card3PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P1Card2PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.P1Card1PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'StartRoundButton
@@ -87,7 +90,7 @@ Partial Class WarGUIForm
         'P1CardsLabel
         '
         Me.P1CardsLabel.AutoSize = True
-        Me.P1CardsLabel.Location = New System.Drawing.Point(50, 9)
+        Me.P1CardsLabel.Location = New System.Drawing.Point(50, 27)
         Me.P1CardsLabel.Name = "P1CardsLabel"
         Me.P1CardsLabel.Size = New System.Drawing.Size(75, 13)
         Me.P1CardsLabel.TabIndex = 3
@@ -96,7 +99,7 @@ Partial Class WarGUIForm
         'P1CapLabel
         '
         Me.P1CapLabel.AutoSize = True
-        Me.P1CapLabel.Location = New System.Drawing.Point(50, 22)
+        Me.P1CapLabel.Location = New System.Drawing.Point(50, 40)
         Me.P1CapLabel.Name = "P1CapLabel"
         Me.P1CapLabel.Size = New System.Drawing.Size(121, 13)
         Me.P1CapLabel.TabIndex = 4
@@ -105,7 +108,7 @@ Partial Class WarGUIForm
         'P2CardsLabel
         '
         Me.P2CardsLabel.AutoSize = True
-        Me.P2CardsLabel.Location = New System.Drawing.Point(601, 9)
+        Me.P2CardsLabel.Location = New System.Drawing.Point(601, 24)
         Me.P2CardsLabel.Name = "P2CardsLabel"
         Me.P2CardsLabel.Size = New System.Drawing.Size(75, 13)
         Me.P2CardsLabel.TabIndex = 5
@@ -114,7 +117,7 @@ Partial Class WarGUIForm
         'P2CapLabel
         '
         Me.P2CapLabel.AutoSize = True
-        Me.P2CapLabel.Location = New System.Drawing.Point(601, 22)
+        Me.P2CapLabel.Location = New System.Drawing.Point(601, 40)
         Me.P2CapLabel.Name = "P2CapLabel"
         Me.P2CapLabel.Size = New System.Drawing.Size(121, 13)
         Me.P2CapLabel.TabIndex = 6
@@ -154,75 +157,19 @@ Partial Class WarGUIForm
         'GameWinnerLabel
         '
         Me.GameWinnerLabel.AutoSize = True
-        Me.GameWinnerLabel.Location = New System.Drawing.Point(346, 9)
+        Me.GameWinnerLabel.Location = New System.Drawing.Point(346, 27)
         Me.GameWinnerLabel.Name = "GameWinnerLabel"
         Me.GameWinnerLabel.Size = New System.Drawing.Size(72, 13)
         Me.GameWinnerLabel.TabIndex = 10
         Me.GameWinnerLabel.Text = "Game Winner"
         '
-        'P1Card1PictureBox
+        'P2Card5PictureBox
         '
-        Me.P1Card1PictureBox.Location = New System.Drawing.Point(224, 151)
-        Me.P1Card1PictureBox.Name = "P1Card1PictureBox"
-        Me.P1Card1PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P1Card1PictureBox.TabIndex = 11
-        Me.P1Card1PictureBox.TabStop = False
-        '
-        'P1Card2PictureBox
-        '
-        Me.P1Card2PictureBox.Location = New System.Drawing.Point(169, 151)
-        Me.P1Card2PictureBox.Name = "P1Card2PictureBox"
-        Me.P1Card2PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P1Card2PictureBox.TabIndex = 12
-        Me.P1Card2PictureBox.TabStop = False
-        '
-        'P1Card3PictureBox
-        '
-        Me.P1Card3PictureBox.Location = New System.Drawing.Point(118, 151)
-        Me.P1Card3PictureBox.Name = "P1Card3PictureBox"
-        Me.P1Card3PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P1Card3PictureBox.TabIndex = 13
-        Me.P1Card3PictureBox.TabStop = False
-        '
-        'P1Card4PictureBox
-        '
-        Me.P1Card4PictureBox.Location = New System.Drawing.Point(63, 151)
-        Me.P1Card4PictureBox.Name = "P1Card4PictureBox"
-        Me.P1Card4PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P1Card4PictureBox.TabIndex = 14
-        Me.P1Card4PictureBox.TabStop = False
-        '
-        'P2Card1PictureBox
-        '
-        Me.P2Card1PictureBox.Location = New System.Drawing.Point(476, 151)
-        Me.P2Card1PictureBox.Name = "P2Card1PictureBox"
-        Me.P2Card1PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P2Card1PictureBox.TabIndex = 15
-        Me.P2Card1PictureBox.TabStop = False
-        '
-        'P2Card2PictureBox
-        '
-        Me.P2Card2PictureBox.Location = New System.Drawing.Point(526, 151)
-        Me.P2Card2PictureBox.Name = "P2Card2PictureBox"
-        Me.P2Card2PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P2Card2PictureBox.TabIndex = 16
-        Me.P2Card2PictureBox.TabStop = False
-        '
-        'P2Card3PictureBox
-        '
-        Me.P2Card3PictureBox.Location = New System.Drawing.Point(582, 151)
-        Me.P2Card3PictureBox.Name = "P2Card3PictureBox"
-        Me.P2Card3PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P2Card3PictureBox.TabIndex = 17
-        Me.P2Card3PictureBox.TabStop = False
-        '
-        'P2Card4PictureBox
-        '
-        Me.P2Card4PictureBox.Location = New System.Drawing.Point(632, 151)
-        Me.P2Card4PictureBox.Name = "P2Card4PictureBox"
-        Me.P2Card4PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P2Card4PictureBox.TabIndex = 18
-        Me.P2Card4PictureBox.TabStop = False
+        Me.P2Card5PictureBox.Location = New System.Drawing.Point(688, 151)
+        Me.P2Card5PictureBox.Name = "P2Card5PictureBox"
+        Me.P2Card5PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P2Card5PictureBox.TabIndex = 20
+        Me.P2Card5PictureBox.TabStop = False
         '
         'P1Card5PictureBox
         '
@@ -232,13 +179,84 @@ Partial Class WarGUIForm
         Me.P1Card5PictureBox.TabIndex = 19
         Me.P1Card5PictureBox.TabStop = False
         '
-        'P2Card5PictureBox
+        'P2Card4PictureBox
         '
-        Me.P2Card5PictureBox.Location = New System.Drawing.Point(688, 151)
-        Me.P2Card5PictureBox.Name = "P2Card5PictureBox"
-        Me.P2Card5PictureBox.Size = New System.Drawing.Size(100, 149)
-        Me.P2Card5PictureBox.TabIndex = 20
-        Me.P2Card5PictureBox.TabStop = False
+        Me.P2Card4PictureBox.Location = New System.Drawing.Point(632, 151)
+        Me.P2Card4PictureBox.Name = "P2Card4PictureBox"
+        Me.P2Card4PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P2Card4PictureBox.TabIndex = 18
+        Me.P2Card4PictureBox.TabStop = False
+        '
+        'P2Card3PictureBox
+        '
+        Me.P2Card3PictureBox.Location = New System.Drawing.Point(582, 151)
+        Me.P2Card3PictureBox.Name = "P2Card3PictureBox"
+        Me.P2Card3PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P2Card3PictureBox.TabIndex = 17
+        Me.P2Card3PictureBox.TabStop = False
+        '
+        'P2Card2PictureBox
+        '
+        Me.P2Card2PictureBox.Location = New System.Drawing.Point(526, 151)
+        Me.P2Card2PictureBox.Name = "P2Card2PictureBox"
+        Me.P2Card2PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P2Card2PictureBox.TabIndex = 16
+        Me.P2Card2PictureBox.TabStop = False
+        '
+        'P2Card1PictureBox
+        '
+        Me.P2Card1PictureBox.Location = New System.Drawing.Point(476, 151)
+        Me.P2Card1PictureBox.Name = "P2Card1PictureBox"
+        Me.P2Card1PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P2Card1PictureBox.TabIndex = 15
+        Me.P2Card1PictureBox.TabStop = False
+        '
+        'P1Card4PictureBox
+        '
+        Me.P1Card4PictureBox.Location = New System.Drawing.Point(63, 151)
+        Me.P1Card4PictureBox.Name = "P1Card4PictureBox"
+        Me.P1Card4PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P1Card4PictureBox.TabIndex = 14
+        Me.P1Card4PictureBox.TabStop = False
+        '
+        'P1Card3PictureBox
+        '
+        Me.P1Card3PictureBox.Location = New System.Drawing.Point(118, 151)
+        Me.P1Card3PictureBox.Name = "P1Card3PictureBox"
+        Me.P1Card3PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P1Card3PictureBox.TabIndex = 13
+        Me.P1Card3PictureBox.TabStop = False
+        '
+        'P1Card2PictureBox
+        '
+        Me.P1Card2PictureBox.Location = New System.Drawing.Point(169, 151)
+        Me.P1Card2PictureBox.Name = "P1Card2PictureBox"
+        Me.P1Card2PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P1Card2PictureBox.TabIndex = 12
+        Me.P1Card2PictureBox.TabStop = False
+        '
+        'P1Card1PictureBox
+        '
+        Me.P1Card1PictureBox.Location = New System.Drawing.Point(224, 151)
+        Me.P1Card1PictureBox.Name = "P1Card1PictureBox"
+        Me.P1Card1PictureBox.Size = New System.Drawing.Size(100, 149)
+        Me.P1Card1PictureBox.TabIndex = 11
+        Me.P1Card1PictureBox.TabStop = False
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.TabIndex = 21
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'WarGUIForm
         '
@@ -266,19 +284,23 @@ Partial Class WarGUIForm
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.EndRoundButton)
         Me.Controls.Add(Me.StartRoundButton)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "WarGUIForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        CType(Me.P1Card1PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P1Card2PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P1Card3PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P1Card4PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P2Card1PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P2Card2PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P2Card3PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P2Card4PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.P1Card5PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.P2Card5PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P1Card5PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P2Card4PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P2Card3PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P2Card2PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P2Card1PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P1Card4PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P1Card3PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P1Card2PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.P1Card1PictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -306,4 +328,6 @@ Partial Class WarGUIForm
     Friend WithEvents P2Card4PictureBox As PictureBox
     Friend WithEvents P1Card5PictureBox As PictureBox
     Friend WithEvents P2Card5PictureBox As PictureBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class
