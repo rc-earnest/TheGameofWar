@@ -10,6 +10,7 @@ Imports System.Drawing
 Public Class WarGUIForm
     Private game As New WarGameLogic
     Private roundNumber As Integer
+    Private hasStarted As Boolean = False
     'subs & functions-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub InitializeCardGraphics()
         ' List all the PictureBoxes involved in the card display
@@ -84,17 +85,35 @@ Public Class WarGUIForm
         Me.Close()
     End Sub
 
-    Private Sub StartRoundButton_Click(sender As Object, e As EventArgs) Handles StartRoundButton.Click
-        If roundNumber = 0 Then
+    Private Sub StartGameButton_Click(sender As Object, e As EventArgs) Handles StartGameButton.Click
+
+        If roundNumber = 0 And hasStarted = False Then
             game.Shuffle()
             game.Deal()
+            hasStarted = True
+            MessageBox.Show("Game Has Started Successfully, Press 'Start Round' to Play")
         Else
-            MessageBox.Show("Error, you cannot start a game right now. Press okay to conitnue")
+            MessageBox.Show($"Error, you cannot start a game right now.{vbCrLf}Press end round to end the round or keep playing until round ends")
         End If
-        GameTimer.Enabled = True
     End Sub
 
-    Private Sub GameTimer_Tick(sender As Object, e As EventArgs) Handles GameTimer.Tick
+    Private Sub EndRoundButton_Click(sender As Object, e As EventArgs) Handles EndRoundButton.Click
+        game.EndGame()
+        GameWinnerLabel.Text = ($"Game Winner: {game.gameWinner}")
+        roundNumber = 0
+        MessageBox.Show("Round Has Ended Successfully")
+        hasStarted = False
+    End Sub
+
+    Private Sub WarGUIForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        InitializeCardGraphics()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutForm.Show()
+    End Sub
+
+    Private Sub StartRoundButton_Click_1(sender As Object, e As EventArgs) Handles StartRoundButton.Click
         If game.p1.GetHand > 0 And game.p2.GetHand > 0 Then
             game.PlayNextStep()
             UpdateCardDisplay()
@@ -107,27 +126,10 @@ Public Class WarGUIForm
             WarsPlayedLabel.Text = ($"Total Wars Played this game: {CStr(game.wars)}")
             RndWinLabel.Text = ($"Round Winner: {game.roundWinner}")
         Else
-            GameTimer.Enabled = False
+            hasStarted = False
             game.EndGame()
             GameWinnerLabel.Text = ($"Game Winner: {game.gameWinner}")
             roundNumber = 0
         End If
-    End Sub
-
-    Private Sub EndRoundButton_Click(sender As Object, e As EventArgs) Handles EndRoundButton.Click
-        GameTimer.Enabled = False
-        game.EndGame()
-        GameWinnerLabel.Text = ($"Game Winner: {game.gameWinner}")
-        roundNumber = 0
-        MessageBox.Show("Round Has Ended Successfully")
-    End Sub
-
-    Private Sub WarGUIForm_Load(sender As Object, e As EventArgs) Handles Me.Load
-        InitializeCardGraphics()
-        GameTimer.Enabled = False
-    End Sub
-
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        AboutForm.Show()
     End Sub
 End Class
